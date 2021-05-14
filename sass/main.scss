@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+
+:root {
+  --primary-background-color: #3A4663;
+  --color-text: #fff;
+  --secondary-background-color: #242D44;
+  --switcher-box-circle: #D03F2F;
+  --display-background-color: #181F33;
+  --buttons-background-color: #EAE3DC;
+  --buttons-color-text: #434A59;
+  --buttons-box-shadow: #B3A497;
+}
+
+[data-theme='secondary'] {
+  --primary-background-color: #E6E6E6;
+  --color-text: #36362C;
+  --secondary-background-color: #D2CDCD;
+  --switcher-box-circle: #C85402;
+  --display-background-color: #EEEEEE;
+  --buttons-background-color: #E5E4E1;
+  --buttons-color-text: var(--color-texts);
+  --buttons-box-shadow: #A79E91;
+}
+
+[data-theme='ternary'] {
+  --primary-background-color: #17062A;
+  --color-text: #FFE53D;
+  --secondary-background-color: #1E0936;
+  --switcher-box-circle: #00DED0;
+  --display-background-color: #1E0936;
+  --buttons-background-color: #331C4D;
+  --buttons-color-text: var(--color-texts);
+  --buttons-box-shadow: #881C9E;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'Spartan', sans-serif;
+
+}
+
+body {
+  height: 100vh;
+  background-color: var(--primary-background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.calculator {
+  color: var(--color-text);
+  width: 540px;
+  height: 78.67vh;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+
+    &__title {
+      font-size: 3.2rem;
+      line-height: 3.6rem;
+      letter-spacing: -0.533333px;
+      padding-top: .8rem;
+    }
+
+    &__toggle-switch {
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      &__title {
+        font-size: 1.2rem;
+        line-height: 1.3rem;
+        letter-spacing: 1px;
+        position: absolute;
+        bottom: .5rem;
+        left: -7.2rem;
+      }
+
+      &__switcher {
+        // display: flex;
+        // background: #242729;
+      }
+
+      .switcher {
+        width: 7.1rem;
+
+        &__numbers {
+          display: flex;
+          justify-content: space-around;
+          font-size: 1.2rem;
+          line-height: 1.3rem;
+          padding-bottom: 5px;
+        }
+
+        &__box {
+          height: 2.6rem;
+          background: var(--secondary-background-color);
+          border-radius: 13px;
+          padding: 5px;
+          cursor: pointer;
+
+          .circle {
+            background-color: var(--switcher-box-circle);
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+
+            transform: translateX(0);
+            transition: transform .4s;
+          }
+        }
+      }
+    }
+  }
+
+  &__display {
+    height: 14.22vh;
+    width: 540px;
+    background-color: var(--display-background-color);
+    border-radius: 1rem;
+    margin-top: 3.2rem;
+    padding-right: 3.2rem;
+    padding-top: 4px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    h1 {
+      font-size: 4.8rem;
+    }
+  }
+
+  &__buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 27px;
+    height: 48rem;
+    width: 540px;
+    background: var(--secondary-background-color);
+    border-radius: 10px;
+    margin-top: 2.4rem;
+    padding: 32.5px 27.5px;
+
+    button {
+      height: 6.4rem;
+      background: var(--buttons-background-color);
+      box-shadow: inset 0px -4px 0px var(--buttons-box-shadow);
+      border-radius: 10px;
+      cursor: pointer;
+      border: none;
+      color: var(--buttons-color-text);
+      font-weight: 700;
+      font-size: 3.2rem;
+      line-height: 3.6rem;
+      letter-spacing: -0.533333px;
+    }
+
+    .delete,
+    .equal-sign,
+    .reset {
+      font-size: 2rem;
+      line-height: 2.2rem;
+    }
+
+    .reset {
+      grid-column: 1 / span 2;
+    }
+
+    .equal-sign {
+      grid-column: 3 / span 2;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+
+  .calculator__display,
+  .calculator {
+    width: 87.2vw;
+  }
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Frontend Mentor | Calculator app</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+        position: absolute;
+        bottom: 10px;
+        color: var(--color-text);
+      }
+      .attribution a {
+        color: #5067c3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="calculator">
+      <div class="calculator__header">
+        <div class="calculator__header__title">calc</div>
+        <div class="calculator__header__toggle-switch">
+          <span class="calculator__header__toggle-switch__title">THEME</span>
+          <div class="calculator__header-toggle-switch__switcher switcher">
+            <div class="switcher__numbers">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+            </div>
+            <div class="switcher__box" id="switcher">
+              <div class="circle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="calculator__display">
+        <h1>100,000</h1>
+      </div>
+      <div class="calculator__buttons">
+        <button value="7">7</button>
+        <button value="8">8</button>
+        <button value="9">9</button>
+        <button class="delete">DEL</button>
+        <button value="4">4</button>
+        <button value="5">5</button>
+        <button value="6">6</button>
+        <button class="operator" value="+">+</button>
+        <button value="1">1</button>
+        <button value="2">2</button>
+        <button value="3">3</button>
+        <button class="operator" value="-">-</button>
+        <button class="decimal" value=".">.</button>
+        <button value="0">0</button>
+        <button class="operator" value="/">/</button>
+        <button class="operator" value="*">&times;</button>
+        <button class="reset" id="reset-btn">RESET</button>
+        <button class="equal-sign operator" value="=">=</button>
+      </div>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a
+        href="https://www.frontendmentor.io/profile/hebaghazali"
+        target="_blank"
+        >Heba Ghazaly</a
+      >.
+    </div>
+
+    <script src="scripts/switcher.js"></script>
+    <script src="scripts/script.js"></script>
+  </body>
+</html>
