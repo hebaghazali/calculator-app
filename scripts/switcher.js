@@ -1,4 +1,4 @@
-const body = document.getElementsByTagName('body')[0];
+// const body = document.getElementsByTagName('body')[0];
 const switcher = document.getElementById('switcher');
 
 const switcherPositions = switcher.getBoundingClientRect();
@@ -11,12 +11,12 @@ const thirdThemePosition = switcherPositions.right;
 switcher.addEventListener('click', e => {
   if (e.clientX <= firstThemePosition) {
     switcher.children[0].style.transform = 'translateX(0)';
-    document.documentElement.setAttribute('data-theme', 'primary');
+    document.documentElement.setAttribute('data-theme', 'first');
   } else if (e.clientX <= secondThemePosition) {
     switcher.children[0].style.transform = 'translateX(21.5px)';
-    document.documentElement.setAttribute('data-theme', 'secondary');
+    document.documentElement.setAttribute('data-theme', 'second');
   } else if (e.clientX <= thirdThemePosition) {
     switcher.children[0].style.transform = 'translateX(44.5px)';
-    document.documentElement.setAttribute('data-theme', 'ternary');
+    document.documentElement.setAttribute('data-theme', 'third');
   }
 });
