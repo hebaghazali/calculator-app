@@ -59,7 +59,7 @@ body {
 
 .calculator {
   color: var(--color-text);
-  width: 54rem; }
+  min-height: 78.67vh; }
   .calculator__header {
     display: flex;
     justify-content: space-between; }
@@ -136,7 +136,7 @@ body {
       line-height: 3.6rem;
       letter-spacing: -0.533333px; }
       .calculator__buttons button:active {
-        transform: translateY(1px);
+        transform: translateY(2px);
         box-shadow: inset 0px -3px 0px var(--buttons-box-shadow); }
     .calculator__buttons .delete,
     .calculator__buttons .equal-sign,

@@ -66,7 +66,7 @@ body {
 
 .calculator {
   color: var(--color-text);
-  width: 54rem;
+  min-height: 78.67vh;
 
   &__header {
     display: flex;
@@ -121,7 +121,6 @@ body {
             height: 16px;
             width: 16px;
             border-radius: 50%;
-
             transform: translateX(0);
             transition: transform .4s;
           }
@@ -174,7 +173,7 @@ body {
       letter-spacing: -0.533333px;
 
       &:active {
-        transform: translateY(1px);
+        transform: translateY(2px);
         box-shadow: inset 0px -3px 0px var(--buttons-box-shadow);
       }
     }
