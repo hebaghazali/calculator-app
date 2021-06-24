@@ -2,6 +2,7 @@ const calculatorDisplay = document.getElementById('calculator-display');
 const inputBtns = [...document.getElementById('calculator-buttons').children];
 const resetBtn = document.getElementById('reset-btn');
 
+const displayMaxLength = 12;
 let firstValue = 0;
 let operatorValue = '';
 let awaitingNextValue = false;
@@ -17,6 +18,7 @@ function sendNumberValue(number) {
     calculatorDisplay.textContent =
       displayValue === '0' ? number : displayValue + number;
   }
+  sliceNumbers();
 }
 
 function addDecimal() {
@@ -55,6 +57,7 @@ function useOperator(operator) {
     const calculation = calculate[operatorValue](firstValue, currentValue);
     calculatorDisplay.textContent = calculation;
     firstValue = calculation;
+    sliceNumbers();
   }
   // Ready for next value, store operator
   awaitingNextValue = true;
@@ -72,6 +75,13 @@ function deleteNumber() {
   }
 
   calculatorDisplay.textContent = calculatorDisplayArray.join('');
+}
+
+function sliceNumbers() {
+  calculatorDisplay.textContent = calculatorDisplay.textContent.slice(
+    0,
+    displayMaxLength
+  );
 }
 
 // Add Event Listeners for numbers, operators, decimal
