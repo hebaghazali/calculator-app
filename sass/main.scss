@@ -5,9 +5,12 @@
   --color-text: #fff;
   --secondary-background-color: #242D44;
   --ternary-background-color: #D03F2F;
+  --ternary-background-color-active: #F96B5B;
   --display-background-color: #181F33;
   --buttons-background-color: #EAE3DC;
+  --buttons-background-color-active: #FFFFFE;
   --buttons-secondary-background-color: #647198;
+  --buttons-secondary-background-color-active: #A2B2E1;
   --buttons-secondary-box-shadow: #414E73;
   --buttons-ternary-box-shadow: #93261A;
   --buttons-color-text: #434A59;
@@ -19,9 +22,12 @@
   --color-text: #36362C;
   --secondary-background-color: #D2CDCD;
   --ternary-background-color: #C85402;
+  --ternary-background-color-active: #FF8A38;
   --display-background-color: #EEEEEE;
   --buttons-background-color: #E5E4E1;
+  --buttons-background-color-active: #FFFFFF;
   --buttons-secondary-background-color: #378187;
+  --buttons-secondary-background-color-active: #62B5BC;
   --buttons-secondary-box-shadow: #1B6066;
   --buttons-ternary-box-shadow: #873901;
   --buttons-color-text: var(--color-texts);
@@ -33,9 +39,12 @@
   --color-text: #FFE53D;
   --secondary-background-color: #1E0936;
   --ternary-background-color: #00DED0;
+  --ternary-background-color-active: #93FFF8;
   --display-background-color: #1E0936;
   --buttons-background-color: #331C4D;
+  --buttons-background-color-active: #6C34AC;
   --buttons-secondary-background-color: #56077C;
+  --buttons-secondary-background-color: #8631AF;
   --buttons-secondary-box-shadow: #BE15F4;
   --buttons-ternary-box-shadow: #6CF9F1;
   --buttons-color-text: var(--color-texts);
@@ -48,11 +57,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Spartan', sans-serif;
 }
 
 html {
   font-size: 62.5%;
-  font-family: 'Spartan', sans-serif;
 }
 
 body {
@@ -104,23 +113,6 @@ body {
           padding-bottom: 5px;
         }
 
-        &__box {
-          height: 2.6rem;
-          background: var(--secondary-background-color);
-          border-radius: 13px;
-          padding: 5px;
-          cursor: pointer;
-
-          .circle {
-            background-color: var(--ternary-background-color);
-            height: 16px;
-            width: 16px;
-            border-radius: 50%;
-            transform: translateX(0);
-            transition: transform .4s;
-          }
-        }
-
         .switch {
           position: relative;
           height: 2.6rem;
@@ -133,10 +125,11 @@ body {
             -webkit-appearance: none;
 
             &+label {
+
               &::after {
                 position: absolute;
                 content: "";
-                width: 71px;
+                width: 25px;
                 height: 2.6rem;
                 top: 0;
                 left: 0;
@@ -149,7 +142,7 @@ body {
           #switch1 {
             &+label {
               &::after {
-                left: 5px;
+                left: 0;
               }
             }
 
@@ -166,7 +159,7 @@ body {
           #switch2 {
             &+label {
               &::after {
-                left: 25px;
+                left: 22px;
               }
             }
 
@@ -183,7 +176,7 @@ body {
           #switch3 {
             &+label {
               &::after {
-                left: 50px;
+                left: 45px;
               }
             }
 
@@ -202,7 +195,6 @@ body {
             background: var(--secondary-background-color);
             border-radius: 13px;
 
-
             &::after {
               position: absolute;
               display: block;
@@ -215,6 +207,12 @@ body {
               border-radius: 50%;
               transform: translateX(0);
               transition: transform .4s;
+              z-index: 10;
+              cursor: pointer;
+            }
+
+            &:hover::after {
+              background-color: var(--ternary-background-color-active);
             }
           }
         }
@@ -270,6 +268,10 @@ body {
         transform: translateY(2px);
         box-shadow: inset 0px -3px 0px var(--buttons-box-shadow);
       }
+
+      &:hover {
+        background: var(--buttons-background-color-active);
+      }
     }
 
     .delete,
@@ -287,6 +289,10 @@ body {
 
       &:active {
         box-shadow: inset 0px -3px 0px var(--buttons-secondary-box-shadow);
+      }
+
+      &:hover {
+        background-color: var(--buttons-secondary-background-color-active);
       }
     }
 
@@ -309,6 +315,10 @@ body {
 
       &:active {
         box-shadow: inset 0px -3px 0px var(--buttons-ternary-box-shadow);
+      }
+
+      &:hover {
+        background-color: var(--ternary-background-color-active);
       }
     }
   }

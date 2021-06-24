@@ -4,9 +4,12 @@
   --color-text: #fff;
   --secondary-background-color: #242D44;
   --ternary-background-color: #D03F2F;
+  --ternary-background-color-active: #F96B5B;
   --display-background-color: #181F33;
   --buttons-background-color: #EAE3DC;
+  --buttons-background-color-active: #FFFFFE;
   --buttons-secondary-background-color: #647198;
+  --buttons-secondary-background-color-active: #A2B2E1;
   --buttons-secondary-box-shadow: #414E73;
   --buttons-ternary-box-shadow: #93261A;
   --buttons-color-text: #434A59;
@@ -17,9 +20,12 @@
   --color-text: #36362C;
   --secondary-background-color: #D2CDCD;
   --ternary-background-color: #C85402;
+  --ternary-background-color-active: #FF8A38;
   --display-background-color: #EEEEEE;
   --buttons-background-color: #E5E4E1;
+  --buttons-background-color-active: #FFFFFF;
   --buttons-secondary-background-color: #378187;
+  --buttons-secondary-background-color-active: #62B5BC;
   --buttons-secondary-box-shadow: #1B6066;
   --buttons-ternary-box-shadow: #873901;
   --buttons-color-text: var(--color-texts);
@@ -30,9 +36,12 @@
   --color-text: #FFE53D;
   --secondary-background-color: #1E0936;
   --ternary-background-color: #00DED0;
+  --ternary-background-color-active: #93FFF8;
   --display-background-color: #1E0936;
   --buttons-background-color: #331C4D;
+  --buttons-background-color-active: #6C34AC;
   --buttons-secondary-background-color: #56077C;
+  --buttons-secondary-background-color: #8631AF;
   --buttons-secondary-box-shadow: #BE15F4;
   --buttons-ternary-box-shadow: #6CF9F1;
   --buttons-color-text: var(--color-texts);
@@ -43,11 +52,11 @@
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-family: 'Spartan', sans-serif; }
 
 html {
-  font-size: 62.5%;
-  font-family: 'Spartan', sans-serif; }
+  font-size: 62.5%; }
 
 body {
   min-height: 100vh;
@@ -87,19 +96,6 @@ body {
           font-size: 1.2rem;
           line-height: 1.3rem;
           padding-bottom: 5px; }
-        .calculator__header__toggle-switch .switcher__box {
-          height: 2.6rem;
-          background: var(--secondary-background-color);
-          border-radius: 13px;
-          padding: 5px;
-          cursor: pointer; }
-          .calculator__header__toggle-switch .switcher__box .circle {
-            background-color: var(--ternary-background-color);
-            height: 16px;
-            width: 16px;
-            border-radius: 50%;
-            transform: translateX(0);
-            transition: transform .4s; }
         .calculator__header__toggle-switch .switcher .switch {
           position: relative;
           height: 2.6rem; }
@@ -114,24 +110,24 @@ body {
             .calculator__header__toggle-switch .switcher .switch #switch3 + label::after {
               position: absolute;
               content: "";
-              width: 71px;
+              width: 25px;
               height: 2.6rem;
               top: 0;
               left: 0;
               z-index: 9;
               cursor: pointer; }
           .calculator__header__toggle-switch .switcher .switch #switch1 + label::after {
-            left: 5px; }
+            left: 0; }
           .calculator__header__toggle-switch .switcher .switch #switch1:checked ~ .switch__inner::after {
             left: 5px;
             transition: left 250ms ease-in-out; }
           .calculator__header__toggle-switch .switcher .switch #switch2 + label::after {
-            left: 25px; }
+            left: 22px; }
           .calculator__header__toggle-switch .switcher .switch #switch2:checked ~ .switch__inner::after {
             left: 25px;
             transition: left 250ms ease-in-out; }
           .calculator__header__toggle-switch .switcher .switch #switch3 + label::after {
-            left: 50px; }
+            left: 45px; }
           .calculator__header__toggle-switch .switcher .switch #switch3:checked ~ .switch__inner::after {
             left: 50px;
             transition: left 250ms ease-in-out; }
@@ -150,7 +146,11 @@ body {
               width: 16px;
               border-radius: 50%;
               transform: translateX(0);
-              transition: transform .4s; }
+              transition: transform .4s;
+              z-index: 10;
+              cursor: pointer; }
+            .calculator__header__toggle-switch .switcher .switch__inner:hover::after {
+              background-color: var(--ternary-background-color-active); }
   .calculator__display {
     width: 54rem;
     background-color: var(--display-background-color);
@@ -189,6 +189,8 @@ body {
       .calculator__buttons button:active {
         transform: translateY(2px);
         box-shadow: inset 0px -3px 0px var(--buttons-box-shadow); }
+      .calculator__buttons button:hover {
+        background: var(--buttons-background-color-active); }
     .calculator__buttons .delete,
     .calculator__buttons .equal-sign,
     .calculator__buttons .reset {
@@ -202,6 +204,9 @@ body {
       .calculator__buttons .delete:active,
       .calculator__buttons .reset:active {
         box-shadow: inset 0px -3px 0px var(--buttons-secondary-box-shadow); }
+      .calculator__buttons .delete:hover,
+      .calculator__buttons .reset:hover {
+        background-color: var(--buttons-secondary-background-color-active); }
     .calculator__buttons .reset,
     .calculator__buttons .equal-sign {
       font-size: 2rem;
@@ -216,6 +221,8 @@ body {
       color: #FFFFFF; }
       .calculator__buttons .equal-sign:active {
         box-shadow: inset 0px -3px 0px var(--buttons-ternary-box-shadow); }
+      .calculator__buttons .equal-sign:hover {
+        background-color: var(--ternary-background-color-active); }
 
 @media only screen and (max-width: 600px) {
   .calculator__header__title {
