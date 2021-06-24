@@ -12,7 +12,6 @@ This is a solution to the [Calculator app challenge on Frontend Mentor](https://
   - [Built with](#built-with)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -51,5 +50,5 @@ Users should be able to:
 
 ## Author
 
-- Frontend Mentor - [@hebaghazali0](https://www.frontendmentor.io/profile/hebaghazali)
+- Frontend Mentor - [@hebaghazali](https://www.frontendmentor.io/profile/hebaghazali)
 - LinkedIn - [@hebaghazali](https://www.linkedin.com/in/hebaghazali/)
