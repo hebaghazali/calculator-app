@@ -24,6 +24,10 @@ function sendNumberValue(number) {
 function addDecimal() {
   // If operator pressed, don't add decimal
   if (awaitingNextValue) return;
+
+  // If exceeded maximum length of display, don't add decimal
+  if (calculatorDisplay.textContent.length === displayMaxLength) return;
+
   // If no decimal, add one
   if (!calculatorDisplay.textContent.includes('.')) {
     calculatorDisplay.textContent = `${calculatorDisplay.textContent}.`;
