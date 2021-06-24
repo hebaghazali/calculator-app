@@ -4,7 +4,7 @@
   "description": "![Design preview for the Calculator app coding challenge](./design/desktop-preview.jpg)",
   "main": "index.js",
   "dependencies": {
-    "node-sass": "^6.0.0"
+    "node-sass": "^6.0.1"
   },
   "devDependencies": {},
   "scripts": {
