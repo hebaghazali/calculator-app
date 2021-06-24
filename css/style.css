@@ -100,6 +100,57 @@ body {
             border-radius: 50%;
             transform: translateX(0);
             transition: transform .4s; }
+        .calculator__header__toggle-switch .switcher .switch {
+          position: relative;
+          height: 2.6rem; }
+          .calculator__header__toggle-switch .switcher .switch #switch1,
+          .calculator__header__toggle-switch .switcher .switch #switch2,
+          .calculator__header__toggle-switch .switcher .switch #switch3 {
+            position: absolute;
+            z-index: 9;
+            -webkit-appearance: none; }
+            .calculator__header__toggle-switch .switcher .switch #switch1 + label::after,
+            .calculator__header__toggle-switch .switcher .switch #switch2 + label::after,
+            .calculator__header__toggle-switch .switcher .switch #switch3 + label::after {
+              position: absolute;
+              content: "";
+              width: 71px;
+              height: 2.6rem;
+              top: 0;
+              left: 0;
+              z-index: 9;
+              cursor: pointer; }
+          .calculator__header__toggle-switch .switcher .switch #switch1 + label::after {
+            left: 5px; }
+          .calculator__header__toggle-switch .switcher .switch #switch1:checked ~ .switch__inner::after {
+            left: 5px;
+            transition: left 250ms ease-in-out; }
+          .calculator__header__toggle-switch .switcher .switch #switch2 + label::after {
+            left: 25px; }
+          .calculator__header__toggle-switch .switcher .switch #switch2:checked ~ .switch__inner::after {
+            left: 25px;
+            transition: left 250ms ease-in-out; }
+          .calculator__header__toggle-switch .switcher .switch #switch3 + label::after {
+            left: 50px; }
+          .calculator__header__toggle-switch .switcher .switch #switch3:checked ~ .switch__inner::after {
+            left: 50px;
+            transition: left 250ms ease-in-out; }
+          .calculator__header__toggle-switch .switcher .switch__inner {
+            height: 2.6rem;
+            background: var(--secondary-background-color);
+            border-radius: 13px; }
+            .calculator__header__toggle-switch .switcher .switch__inner::after {
+              position: absolute;
+              display: block;
+              content: "";
+              top: 5px;
+              left: 0;
+              background-color: var(--ternary-background-color);
+              height: 16px;
+              width: 16px;
+              border-radius: 50%;
+              transform: translateX(0);
+              transition: transform .4s; }
   .calculator__display {
     width: 54rem;
     background-color: var(--display-background-color);

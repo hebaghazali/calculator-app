@@ -93,11 +93,6 @@ body {
         left: -7.2rem;
       }
 
-      &__switcher {
-        // display: flex;
-        // background: #242729;
-      }
-
       .switcher {
         width: 7.1rem;
 
@@ -125,7 +120,106 @@ body {
             transition: transform .4s;
           }
         }
+
+        .switch {
+          position: relative;
+          height: 2.6rem;
+
+          #switch1,
+          #switch2,
+          #switch3 {
+            position: absolute;
+            z-index: 9;
+            -webkit-appearance: none;
+
+            &+label {
+              &::after {
+                position: absolute;
+                content: "";
+                width: 71px;
+                height: 2.6rem;
+                top: 0;
+                left: 0;
+                z-index: 9;
+                cursor: pointer;
+              }
+            }
+          }
+
+          #switch1 {
+            &+label {
+              &::after {
+                left: 5px;
+              }
+            }
+
+            &:checked {
+              &~.switch__inner {
+                &::after {
+                  left: 5px;
+                  transition: left 250ms ease-in-out;
+                }
+              }
+            }
+          }
+
+          #switch2 {
+            &+label {
+              &::after {
+                left: 25px;
+              }
+            }
+
+            &:checked {
+              &~.switch__inner {
+                &::after {
+                  left: 25px;
+                  transition: left 250ms ease-in-out;
+                }
+              }
+            }
+          }
+
+          #switch3 {
+            &+label {
+              &::after {
+                left: 50px;
+              }
+            }
+
+            &:checked {
+              &~.switch__inner {
+                &::after {
+                  left: 50px;
+                  transition: left 250ms ease-in-out;
+                }
+              }
+            }
+          }
+
+          &__inner {
+            height: 2.6rem;
+            background: var(--secondary-background-color);
+            border-radius: 13px;
+
+
+            &::after {
+              position: absolute;
+              display: block;
+              content: "";
+              top: 5px;
+              left: 0;
+              background-color: var(--ternary-background-color);
+              height: 16px;
+              width: 16px;
+              border-radius: 50%;
+              transform: translateX(0);
+              transition: transform .4s;
+            }
+          }
+        }
       }
+
     }
   }
 

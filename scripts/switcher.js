@@ -1,22 +1,42 @@
-// const body = document.getElementsByTagName('body')[0];
-const switcher = document.getElementById('switcher');
+const switch1 = document.getElementById('switch1');
+const switch2 = document.getElementById('switch2');
+const switch3 = document.getElementById('switch3');
 
-const switcherPositions = switcher.getBoundingClientRect();
-
-const switcherOneThird = switcherPositions.width / 3; // 1/3 of the switcher width
-const firstThemePosition = switcherPositions.left + switcherOneThird;
-const secondThemePosition = firstThemePosition + switcherOneThird;
-const thirdThemePosition = switcherPositions.right;
-
-switcher.addEventListener('click', e => {
-  if (e.clientX <= firstThemePosition) {
-    switcher.children[0].style.transform = 'translateX(0)';
+switch1.addEventListener('click', () => {
+  if (switch2.hasAttribute('checked')) {
+    switch2.removeAttribute('checked');
+  }
+  if (switch3.hasAttribute('checked')) {
+    switch3.removeAttribute('checked');
+  }
+  switch1.setAttribute('checked', '');
+  if (switch1.hasAttribute('checked')) {
     document.documentElement.setAttribute('data-theme', 'first');
-  } else if (e.clientX <= secondThemePosition) {
-    switcher.children[0].style.transform = 'translateX(21.5px)';
+  }
+});
+
+switch2.addEventListener('click', () => {
+  if (switch1.hasAttribute('checked')) {
+    switch1.removeAttribute('checked');
+  }
+  if (switch3.hasAttribute('checked')) {
+    switch3.removeAttribute('checked');
+  }
+  switch2.setAttribute('checked', '');
+  if (switch2.hasAttribute('checked')) {
     document.documentElement.setAttribute('data-theme', 'second');
-  } else if (e.clientX <= thirdThemePosition) {
-    switcher.children[0].style.transform = 'translateX(44.5px)';
+  }
+});
+
+switch3.addEventListener('click', () => {
+  if (switch1.hasAttribute('checked')) {
+    switch1.removeAttribute('checked');
+  }
+  if (switch2.hasAttribute('checked')) {
+    switch2.removeAttribute('checked');
+  }
+  switch3.setAttribute('checked', '');
+  if (switch3.hasAttribute('checked')) {
     document.documentElement.setAttribute('data-theme', 'third');
   }
 });
