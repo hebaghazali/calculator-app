@@ -252,8 +252,7 @@ body {
   &__buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 2.7rem;
-    // height: 48rem;
+    grid-gap: 2.4rem;
     width: 54rem;
     background: var(--secondary-background-color);
     border-radius: 10px;
