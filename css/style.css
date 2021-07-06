@@ -59,7 +59,7 @@ html {
   font-size: 62.5%; }
 
 body {
-  min-height: 100vh;
+  height: 100vh;
   background-color: var(--primary-background-color);
   display: flex;
   justify-content: center;
@@ -68,7 +68,7 @@ body {
 
 .calculator {
   color: var(--color-text);
-  min-height: 78.67vh; }
+  max-height: 78.67vh; }
   .calculator__header {
     display: flex;
     justify-content: space-between; }
