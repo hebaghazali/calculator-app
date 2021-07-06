@@ -222,9 +222,8 @@ body {
   }
 
   &__display {
-    // height: 14.22vh;
     width: 54rem;
-    min-height: 10.5rem;
+    min-height: 10rem;
     background-color: var(--display-background-color);
     border-radius: 1rem;
     margin-top: 3.56vh;
@@ -237,7 +236,6 @@ body {
     .calculator-output {
       font-size: 4.8rem;
       padding: 4.22vh 0 4vh;
-      // grid-column: 1 / -1;
       word-wrap: break-word;
       word-break: break-all;
       display: flex;
