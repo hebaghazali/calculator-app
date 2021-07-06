@@ -224,6 +224,7 @@ body {
   &__display {
     // height: 14.22vh;
     width: 54rem;
+    min-height: 10.5rem;
     background-color: var(--display-background-color);
     border-radius: 1rem;
     margin-top: 3.56vh;
@@ -233,9 +234,21 @@ body {
     justify-content: flex-end;
     align-items: center;
 
-    h1 {
+    .calculator-output {
       font-size: 4.8rem;
       padding: 4.22vh 0 4vh;
+      // grid-column: 1 / -1;
+      word-wrap: break-word;
+      word-break: break-all;
+      display: flex;
+      flex-direction: column;
+
+      .previous-operand {
+        font-size: 1.8rem;
+        color: #9b9b9b;
+        padding-bottom: 5px;
+        align-self: flex-end;
+      }
     }
   }
 
